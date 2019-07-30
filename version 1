@@ -1,0 +1,209 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AIPrescriptionTool
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hey there!" +
+                " Welcome to the first ever 'Ai Doc' Service. " +
+                "I'm very excited to help you today." +
+                "Let's get the basic stuff out of the way first " +
+                ". Lets start with your first name.  ");
+            string firstname = Console.ReadLine();
+            Console.WriteLine($"ok {firstname}, What is your last name?");
+            string lastname = Console.ReadLine();
+            Console.WriteLine($"Perfect,{firstname} {lastname} I got that.");
+            Console.WriteLine("Ok so next I'll need your Date of Birth");
+
+            string BirthDate = Console.ReadLine();
+
+            Console.WriteLine($" You were only born on {BirthDate} ?! WOW you Look great." +
+                $" I hope from the bottom of my CPU that I age as well as you have!!");
+
+            Console.WriteLine("Ok, next we'll need your weight");
+            string weight = Console.ReadLine();
+            Console.WriteLine($"Ok, {weight} I got it, Next I need your approximate height");
+            string height = Console.ReadLine();
+            Console.WriteLine($"Really? You're only {height}, for some reason I thought you looked taller than that, well then again I'm " +
+                $"only about 2 feet in length so, theres that");
+
+            //Console.WriteLine("Alrighty let's talk about your symtoms.// Using keyword(s) What symptoms are you dealing with for example: 'vomiting','back pain',  ");
+            //string symptoms = Console.ReadLine();
+            //Console.WriteLine($" {symptoms} is never fun");
+
+            Console.WriteLine("Alrighty lets talk about your symptoms: the following list are the symptom type(s) the Ai Doc " +
+                "currently recognizes please enter in numerical form what symtom type(s) you are curretnly dealing with");
+            Console.WriteLine("[1] Cold Symptoms");
+            Console.WriteLine("[2] Musculoskeletal pain");
+            Console.WriteLine("[3] Digestional issues");
+            Console.WriteLine("[4] respiratory issues");
+
+
+
+            int UserSymptoms = Int32.Parse(Console.ReadLine());
+
+            switch (UserSymptoms)
+            {
+                case 1:
+                    Coldsympt();
+                    break;
+
+                case 2:
+                    Musculoskelsympt();
+                    break;
+
+                case 3:
+                    DigestSympt();
+                    break;
+                case 4:
+                    RespiSympt();
+                    break;
+               
+                    break;
+                default:
+                    Console.WriteLine("Sorry I don't understand that answer please use the options listed for the best results");
+                    break;
+            }
+
+
+
+            Console.ReadLine();
+        }
+        public static void Coldsympt()
+        {
+            Console.WriteLine("Okay then, Cold symptoms are never fun now please be more specific. The following options" +
+                "are designed to give me abetter idea on how to more accurately prescribe a solution to your symptoms");
+            Console.WriteLine("[1] Sneezing");
+            Console.WriteLine("[2] Coughing");
+            Console.WriteLine("[3] Coughing and sneezing");
+            Console.WriteLine("[4] itchy throat");
+            Console.WriteLine("[5] itchy Eyes");
+            int UserSymptoms = Int32.Parse(Console.ReadLine());
+            switch (UserSymptoms)
+            {
+                case 1:
+                    Console.WriteLine("Take 2 Vicks Sinex tablets after dinner and call me in the morning");
+                    break;
+
+                case 2:
+                    Console.WriteLine("take two table spoons of Robitussin and call me in the morning");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Take two table spoons of Nyquil");
+                    break;
+                case 4:
+                    Console.WriteLine("take 3 honey hauls cough drop and call me in the mornning");
+                    break;
+                case 5:
+                    Console.WriteLine("Apply Clear Eyes eye drops and call me in the morning");
+                    break;
+                default:
+                    Console.WriteLine("Sorry I don;t understand that answer please use the options listed for the best results");
+                    break;
+            }
+        }
+        public static void Musculoskelsympt()
+        {
+            Console.WriteLine("Okay then, Musculoskeletal pain is never fun now please be more specific. The following options" +
+                "are designed to give me abetter idea on how to more accurately prescribe a solution to your symptoms");
+            Console.WriteLine("[1] Back pain");
+            Console.WriteLine("[2] Knee pain");
+            Console.WriteLine("[3] Neck pain");
+            Console.WriteLine("[4] Shoulder Pain");
+            Console.WriteLine("[5] Wrist Pain");
+            int UserSymptoms = Int32.Parse(Console.ReadLine());
+            switch (UserSymptoms)
+            {
+                case 1:
+                    Console.WriteLine("Take 2 Advil tablets do some downward dog stretches after dinner and call me in the morning");
+                    break;
+
+                case 2:
+                    Console.WriteLine("take two Advil tablets do some knee stretches and call me in the morning");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Take two Advil and do neck rolling stretches and get a differnt pillow");
+                    break;
+                case 4:
+                    Console.WriteLine("Avoid raising your arm over your head, take tow Advil tablets and call me in the mornning");
+                    break;
+                case 5:
+                    Console.WriteLine("Try buying an ergonomic key board for your computer, take two advil and call me in the morning");
+                    break;
+                default:
+                    Console.WriteLine("Sorry I don;t understand that answer please use the options listed for the best results");
+                    break;
+            }
+        }
+        public static void DigestSympt()
+        {
+            Console.WriteLine("Okay then, Digestive issues are never fun. Now, please be more specific. The following options" +
+                "are designed to give me abetter idea on how to more accurately prescribe a solution to your symptoms");
+            Console.WriteLine("[1] Vomiting");
+            Console.WriteLine("[2] Diarrhea");
+            Console.WriteLine("[3] Constipation ");
+          int UserSymptoms = Int32.Parse(Console.ReadLine());
+            switch (UserSymptoms)
+            {
+                case 1:
+                    Console.WriteLine("Take 2 Zofran tablets eat only BRAT Diet for 4 days");
+                    break;
+
+                case 2:
+                    Console.WriteLine("take 3 Pepto Bismol tablets eat only BRAT Diet call me in the morning");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Take two Tablets MiraLax or any Stool softener");
+                    break;
+                default:
+                    Console.WriteLine("Sorry I don;t understand that answer please use the options listed for the best results");
+
+                    break;
+            }
+        }
+        public static void RespiSympt()
+        {
+            Console.WriteLine("Okay then, Respiratory issues are never fun now please be more specific. The following options" +
+                "are designed to give me a better idea on how to more accurately prescribe a solution to your symptoms");
+            Console.WriteLine("[1] Stubborn Cough");
+            Console.WriteLine("[2] Difficulty Breathing");
+            Console.WriteLine("[3] Breathing Noisily");
+            Console.WriteLine("[4] Coughing Up Blood");
+
+            int UserSymptoms = Int32.Parse(Console.ReadLine());
+            switch (UserSymptoms)
+            {
+                case 1:
+                    Console.WriteLine("See a doc if your cough sounds as bad as you look");
+                    break;
+
+                case 2:
+                    Console.WriteLine("So you might have something in your air way .. Please stop looking at my screen and go see a doctor");
+                    break;
+
+                case 3:
+                    Console.WriteLine("So, My microphone is picking up your breathing from here... please , please go see a doc");
+                    break;
+                case 4:
+                    Console.WriteLine("Are you seriously asking me what to do if you're coughing up blood?!?! GO TO THE HOSPITAL NOW!!!!!");
+                    break;
+                
+                default:
+                    Console.WriteLine("Sorry I don;t understand that answer please use the options listed for the best results");
+
+                    break;
+            }
+
+        }
+    }
+}
+
